@@ -9,33 +9,22 @@ class HeadMenu extends StatefulWidget {
 class _HeadMenuState extends State<HeadMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width - 60,
-      child: ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 50,
-          ),
-          Row(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    HeadMenuText(text: 'Films', active: true),
-                    HeadMenuText(text: 'Series', active: false),
-                    HeadMenuText(text: 'My List', active: false),
-                  ],
-                ),
-              ),
+              HeadMenuText(text: 'Films', active: true),
+              HeadMenuText(text: 'Series', active: false),
+              HeadMenuText(text: 'My List', active: false),
             ],
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 }
