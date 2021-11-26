@@ -15,12 +15,14 @@ class HeadMenuText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-      child: Text(
-        text,
-        style: GoogleFonts.lato(
-            color: active ? Colors.red : Colors.black,
-            fontWeight: active ? FontWeight.w700 : FontWeight.w400,
-            fontSize: 23),
+      child: GestureDetector(
+        child: Text(
+          text,
+          style: GoogleFonts.lato(
+              color: active ? Colors.red : Colors.black,
+              fontWeight: active ? FontWeight.w700 : FontWeight.w400,
+              fontSize: 23),
+        ),
       ),
     );
   }

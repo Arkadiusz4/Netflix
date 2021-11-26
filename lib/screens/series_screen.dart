@@ -1,21 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:netflix/models/movie_models.dart';
-import 'package:netflix/screens/movie_screen.dart';
 import 'package:netflix/widgets/films_list_view/film_list_view.dart';
 import 'package:netflix/widgets/films_list_view/netflix_orignals_list_view.dart';
-import 'package:netflix/widgets/head_menu/head_menu_films.dart';
+import 'package:netflix/widgets/head_menu/head_menu_series.dart';
 import 'package:netflix/widgets/navbar/navbar1.dart';
 import 'package:netflix/widgets/text_menu.dart';
 
-class MainHome extends StatefulWidget {
+import 'movie_screen.dart';
+
+class SeriesScreen extends StatefulWidget {
   @override
-  _MainHomeState createState() => _MainHomeState();
+  _SeriesScreenState createState() => _SeriesScreenState();
 }
 
-class _MainHomeState extends State<MainHome> {
+class _SeriesScreenState extends State<SeriesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,9 +27,9 @@ class _MainHomeState extends State<MainHome> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
-                HeadMenuFilm(),
+                HeadMenuSeries(),
                 SizedBox(
                   height: 20,
                 ),

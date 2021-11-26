@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'menu_main_icon.dart';
 
-class Navbar extends StatefulWidget {
+class Navbar2 extends StatefulWidget {
   @override
   _NavbarState createState() => _NavbarState();
 }
 
-class _NavbarState extends State<Navbar> {
+class _NavbarState extends State<Navbar2> {
   String logo =
       'https://historia.org.pl/wp-content/uploads/2018/04/netflix-logo.jpg';
 
@@ -26,11 +26,11 @@ class _NavbarState extends State<Navbar> {
           Expanded(child: Container()),
           MenuMainIcon(
             icon: Icons.home,
-            active: true,
+            active: false,
           ),
           MenuMainIcon(
             icon: Icons.search,
-            active: false,
+            active: true,
           ),
           MenuMainIcon(
             icon: Icons.slideshow,

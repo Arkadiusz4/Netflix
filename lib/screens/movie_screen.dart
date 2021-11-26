@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix/models/movie_models.dart';
-import 'package:netflix/widgets/circular_clipper.dart';
-import 'package:netflix/widgets/content_scroll.dart';
+import 'package:netflix/widgets/movie_screen/content_scroll.dart';
+import 'package:netflix/widgets/movie_screen/circular_clipper.dart';
+
 import 'package:netflix/widgets/movie_screen/info_text.dart';
 
 class MovieScreen extends StatefulWidget {
@@ -26,9 +26,6 @@ class MovieScreen extends StatefulWidget {
 }
 
 class _MovieScreenState extends State<MovieScreen> {
-  //final String photo =
-  //   'https://images.complex.com/complex/images/c_fill,f_auto,g_center,w_1200/fl_lossy,pg_1/knie3z7uwe3inyua5kft/no-time-to-die-04';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
