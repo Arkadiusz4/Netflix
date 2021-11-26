@@ -14,7 +14,7 @@ class _NetflixOriginalsListViewState extends State<NetflixOriginalsListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 350,
       width: MediaQuery.of(context).size.width - 60,
       child: ListView.builder(
           padding: EdgeInsets.only(left: 10),

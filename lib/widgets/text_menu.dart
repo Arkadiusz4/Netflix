@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextMenu extends StatelessWidget {
   const TextMenu({
@@ -17,7 +18,7 @@ class TextMenu extends StatelessWidget {
         children: [
           Text(
             text,
-            style: TextStyle(
+            style: GoogleFonts.raleway(
               fontWeight: FontWeight.w500,
               fontSize: 18,
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:netflix/models/movie_models.dart';
+import 'package:netflix/screens/movie_screen.dart';
 import 'package:netflix/widgets/films_list_view/film_list_view.dart';
 import 'package:netflix/widgets/films_list_view/netflix_orignals_list_view.dart';
 import 'package:netflix/widgets/head_menu/head_menu.dart';
@@ -35,12 +36,29 @@ class _MainHomeState extends State<MainHome> {
                 ),
                 CarouselSlider(
                   items: movies
-                      .map((e) => Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: NetworkImage(e.imgUrl),
-                                  fit: BoxFit.fitHeight),
+                      .map((e) => GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => MovieScreen(
+                                  photo: e.imgUrl,
+                                  categories: e.categories,
+                                  title: e.title,
+                                  year: e.year,
+                                  country: e.country,
+                                  description: e.description,
+                                  length: e.length,
+                                  screenshots: e.screenshots,
+                                ),
+                              ),
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: NetworkImage(e.imgUrl),
+                                    fit: BoxFit.fitHeight),
+                              ),
                             ),
                           ))
                       .toList(),
@@ -70,6 +88,9 @@ class _MainHomeState extends State<MainHome> {
                   height: 10,
                 ),
                 NetflixOriginalsListView(),
+                SizedBox(
+                  height: 20,
+                ),
                 TextMenu(text: 'My List'),
                 SizedBox(
                   height: 10,

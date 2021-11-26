@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HeadMenuText extends StatelessWidget {
   const HeadMenuText({
@@ -16,10 +17,10 @@ class HeadMenuText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Text(
         text,
-        style: TextStyle(
+        style: GoogleFonts.lato(
             color: active ? Colors.red : Colors.black,
-            fontWeight: active ? FontWeight.w600 : FontWeight.w400,
-            fontSize: 20),
+            fontWeight: active ? FontWeight.w700 : FontWeight.w400,
+            fontSize: 23),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/screens/main_home.dart';
+import 'package:netflix/screens/movie_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MainHome(),
+      routes: {
+        // MovieScreen.routeName: (ctx) => MovieScreen(),
+      },
     );
   }
 }

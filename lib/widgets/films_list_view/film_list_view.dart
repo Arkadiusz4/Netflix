@@ -13,7 +13,7 @@ class _FilmListViewState extends State<FilmListView> {
       height: 200,
       width: MediaQuery.of(context).size.width - 60,
       child: ListView.builder(
-          padding: EdgeInsets.only(left: 10),
+          padding: EdgeInsets.only(left: 10, right: 10),
           scrollDirection: Axis.horizontal,
           itemCount: movies.length,
           itemBuilder: (context, index) {

@@ -22,7 +22,7 @@ class Movie {
   });
 }
 
-final movies = [
+final List<Movie> movies = [
   Movie(
       imgUrl:
           'https://static.posters.cz/image/1300/plakaty/james-bond-no-time-to-die-profile-i114389.jpg',
