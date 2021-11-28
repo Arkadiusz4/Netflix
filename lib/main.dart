@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/screens/main_home.dart';
-import 'package:netflix/screens/movie_screen.dart';
+import 'package:netflix/screens/detail_screen/film_screen.dart';
 
 void main() {
   runApp(MyApp());

@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:netflix/models/movie_models.dart';
-import 'package:netflix/screens/movie_screen.dart';
+import 'package:netflix/screens/detail_screen/film_screen.dart';
 import 'package:netflix/widgets/films_list_view/film_list_view.dart';
 import 'package:netflix/widgets/films_list_view/netflix_orignals_list_view.dart';
 import 'package:netflix/widgets/head_menu/head_menu_films.dart';
@@ -20,6 +20,7 @@ class _MainHomeState extends State<MainHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Navbar1(),
@@ -32,7 +33,7 @@ class _MainHomeState extends State<MainHome> {
                 ),
                 HeadMenuFilm(),
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 CarouselSlider(
                   items: movies
@@ -53,11 +54,27 @@ class _MainHomeState extends State<MainHome> {
                               ),
                             ),
                             child: Container(
-                              decoration: BoxDecoration(
+                              child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: NetworkImage(e.imgUrl),
-                                    fit: BoxFit.fitHeight),
+                                child: Image.network(
+                                  e.imgUrl,
+                                  fit: BoxFit.cover,
+                                  loadingBuilder: (BuildContext context,
+                                      Widget child,
+                                      ImageChunkEvent? loadingProgress) {
+                                    if (loadingProgress == null) return child;
+                                    return Center(
+                                      child: SizedBox(
+                                        height: 100,
+                                        width: 100,
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 4,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ))
@@ -75,27 +92,98 @@ class _MainHomeState extends State<MainHome> {
                 SizedBox(
                   height: 20,
                 ),
-                TextMenu(text: 'Popular Now'),
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'Popular Now'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      FilmListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 10,
                 ),
-                FilmListView(),
-                SizedBox(
-                  height: 20,
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'Netflix Originals'.toUpperCase()),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      NetflixOriginalsListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
-                TextMenu(text: 'Netflix Originals'.toUpperCase()),
                 SizedBox(
                   height: 10,
                 ),
-                NetflixOriginalsListView(),
-                SizedBox(
-                  height: 20,
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'New on Netflix'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      FilmListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
-                TextMenu(text: 'My List'),
                 SizedBox(
                   height: 10,
                 ),
-                FilmListView(),
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'My List'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      FilmListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 20,
                 ),

@@ -58,17 +58,31 @@ class ContentScroll extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black54,
+                      color: Colors.black26,
                       offset: Offset(0.0, 4.0),
                       blurRadius: 6.0,
                     ),
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Image(
-                    image: NetworkImage(images[index]),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    images[index],
                     fit: BoxFit.cover,
+                    loadingBuilder: (BuildContext context, Widget child,
+                        ImageChunkEvent? loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(
+                        child: SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 4,
+                            color: Colors.red,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
               );

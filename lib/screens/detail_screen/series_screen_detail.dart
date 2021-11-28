@@ -6,11 +6,11 @@ import 'package:netflix/widgets/movie_screen/circular_clipper.dart';
 
 import 'package:netflix/widgets/movie_screen/info_text.dart';
 
-class MovieScreen extends StatefulWidget {
-  final String photo, title, categories, country, description;
-  final int year, length;
+class SeriesScreenDetail extends StatefulWidget {
+  final String photo, title, categories, country, description, year;
+  final int length;
   final List<String> screenshots;
-  const MovieScreen(
+  const SeriesScreenDetail(
       {Key? key,
       required this.photo,
       required this.title,
@@ -22,10 +22,10 @@ class MovieScreen extends StatefulWidget {
       required this.screenshots})
       : super(key: key);
   @override
-  _MovieScreenState createState() => _MovieScreenState();
+  _SeriesScreenDetailState createState() => _SeriesScreenDetailState();
 }
 
-class _MovieScreenState extends State<MovieScreen> {
+class _SeriesScreenDetailState extends State<SeriesScreenDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class _MovieScreenState extends State<MovieScreen> {
                     padding: EdgeInsets.only(left: 20),
                     onPressed: () => Navigator.pop(context),
                     icon: Icon(Icons.arrow_back),
-                    iconSize: 30,
+                    iconSize: 40,
                   ),
                   IconButton(
                     padding: EdgeInsets.only(right: 20),
@@ -103,7 +103,7 @@ class _MovieScreenState extends State<MovieScreen> {
                 child: IconButton(
                   onPressed: () {},
                   icon: Icon(
-                    Icons.share,
+                    Icons.download,
                     size: 40,
                   ),
                 ),
@@ -138,8 +138,7 @@ class _MovieScreenState extends State<MovieScreen> {
                     InfoText(text: widget.year.toString(), subtitle: 'Year'),
                     InfoText(text: widget.country, subtitle: 'Country'),
                     InfoText(
-                        text: '${widget.length.toString()} min',
-                        subtitle: 'Length')
+                        text: widget.length.toString(), subtitle: 'Seasons')
                   ],
                 ),
                 SizedBox(

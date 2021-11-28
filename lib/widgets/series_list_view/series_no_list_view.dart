@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/models/movie_models.dart';
-import 'package:netflix/screens/detail_screen/film_screen.dart';
+import 'package:netflix/models/series_models.dart';
+import 'package:netflix/screens/detail_screen/series_screen_detail.dart';
 
-class NetflixOriginalsListView extends StatefulWidget {
+class SeriesNetflixOriginalsListView extends StatefulWidget {
   @override
-  _NetflixOriginalsListViewState createState() =>
-      _NetflixOriginalsListViewState();
+  _SeriesNetflixOriginalsListViewState createState() =>
+      _SeriesNetflixOriginalsListViewState();
 }
 
-class _NetflixOriginalsListViewState extends State<NetflixOriginalsListView> {
+class _SeriesNetflixOriginalsListViewState
+    extends State<SeriesNetflixOriginalsListView> {
   String logo =
       'https://historia.org.pl/wp-content/uploads/2018/04/netflix-logo.jpg';
 
@@ -16,25 +17,27 @@ class _NetflixOriginalsListViewState extends State<NetflixOriginalsListView> {
   Widget build(BuildContext context) {
     return Container(
       height: 350,
+      padding: EdgeInsets.only(right: 10),
       width: MediaQuery.of(context).size.width - 60,
       child: ListView.builder(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(left: 10),
           scrollDirection: Axis.horizontal,
-          itemCount: movies.length,
+          itemCount: series.length,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => MovieScreen(
-                      photo: movies[index].imgUrl,
-                      title: movies[index].title,
-                      categories: movies[index].categories,
-                      year: movies[index].year,
-                      country: movies[index].country,
-                      description: movies[index].description,
-                      length: movies[index].length,
-                      screenshots: movies[index].screenshots),
+                  builder: (_) => SeriesScreenDetail(
+                    photo: series[index].imgUrl,
+                    title: series[index].title,
+                    categories: series[index].categories,
+                    year: series[index].year,
+                    country: series[index].country,
+                    description: series[index].description,
+                    length: series[index].length,
+                    screenshots: series[index].screenshots,
+                  ),
                 ),
               ),
               child: Row(
@@ -43,13 +46,13 @@ class _NetflixOriginalsListViewState extends State<NetflixOriginalsListView> {
                   Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Container(
                           width: 200,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                                image: NetworkImage(movies[index].imgUrl),
+                                image: NetworkImage(series[index].imgUrl),
                                 fit: BoxFit.cover),
                           ),
                         ),

@@ -1,13 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix/models/movie_models.dart';
+import 'package:netflix/models/series_models.dart';
+import 'package:netflix/screens/detail_screen/series_screen_detail.dart';
 import 'package:netflix/widgets/films_list_view/film_list_view.dart';
 import 'package:netflix/widgets/films_list_view/netflix_orignals_list_view.dart';
 import 'package:netflix/widgets/head_menu/head_menu_series.dart';
 import 'package:netflix/widgets/navbar/navbar1.dart';
+import 'package:netflix/widgets/series_list_view/series_list_view.dart';
+import 'package:netflix/widgets/series_list_view/series_no_list_view.dart';
 import 'package:netflix/widgets/text_menu.dart';
-
-import 'movie_screen.dart';
 
 class SeriesScreen extends StatefulWidget {
   @override
@@ -34,21 +35,20 @@ class _SeriesScreenState extends State<SeriesScreen> {
                   height: 20,
                 ),
                 CarouselSlider(
-                  items: movies
+                  items: series
                       .map((e) => GestureDetector(
                             onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => MovieScreen(
-                                  photo: e.imgUrl,
-                                  categories: e.categories,
-                                  title: e.title,
-                                  year: e.year,
-                                  country: e.country,
-                                  description: e.description,
-                                  length: e.length,
-                                  screenshots: e.screenshots,
-                                ),
+                                builder: (_) => SeriesScreenDetail(
+                                    photo: e.imgUrl,
+                                    title: e.title,
+                                    categories: e.categories,
+                                    year: e.year,
+                                    country: e.country,
+                                    description: e.description,
+                                    length: e.length,
+                                    screenshots: e.screenshots),
                               ),
                             ),
                             child: Container(
@@ -74,27 +74,99 @@ class _SeriesScreenState extends State<SeriesScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                TextMenu(text: 'Popular Now'),
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'Popular Now'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SeriesListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 10,
                 ),
-                FilmListView(),
-                SizedBox(
-                  height: 20,
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'Netflix Originals'.toUpperCase()),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SeriesNetflixOriginalsListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
-                TextMenu(text: 'Netflix Originals'.toUpperCase()),
                 SizedBox(
                   height: 10,
                 ),
-                NetflixOriginalsListView(),
-                SizedBox(
-                  height: 20,
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'My List'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SeriesListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
                 ),
-                TextMenu(text: 'My List'),
                 SizedBox(
                   height: 10,
                 ),
-                FilmListView(),
+                Card(
+                  color: Colors.white.withOpacity(0.85),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextMenu(text: 'My List'),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SeriesListView(),
+                      SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 20,
                 ),

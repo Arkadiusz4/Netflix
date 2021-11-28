@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/screens/coming_soon_screen.dart';
+import 'package:netflix/screens/search_screen.dart';
 
 import 'menu_main_icon.dart';
 
@@ -29,9 +30,17 @@ class _NavbarState extends State<Navbar1> {
             icon: Icons.home,
             active: true,
           ),
-          MenuMainIcon(
-            icon: Icons.search,
-            active: false,
+          GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => SearchScreen(),
+              ),
+            ),
+            child: MenuMainIcon(
+              icon: Icons.search,
+              active: false,
+            ),
           ),
           GestureDetector(
             onTap: () => Navigator.push(
