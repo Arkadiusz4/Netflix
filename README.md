@@ -1,6 +1,45 @@
 # Netflix Clone App
 
-A new Flutter project.
+Project based on redesigning Netflix which I found on Dribble and Behance. App made in Dart and Flutter.
+
+## Table of Contents
+1. [Netflix Redesign UI](#netflix-redesign-ui)
+2. [Screenshots](#screenshots)
+3. [Technologies and Plugins](#technologies-and-plugins)
+4. [Netflix Redesign UI](#netflix-redesign-ui)
+5. [Netflix Redesign UI](#netflix-redesign-ui)
+
+<a name="netflix-redesign-ui"></a>
+## Netflix Redesign UI
+
+<a name="screenshots"></a>
+## Screenshots
+
+### Home Screen
+
+---
+
+### My List Screen
+
+---
+
+### Search Screen
+
+---
+
+### Coming Soon Screen
+
+---
+
+<a name="technologies-and-plugins"></a>
+## Technologies and Plugins
+
+* [Dart](https://dart.dev/) 
+* [Flutter](https://flutter.dev/) 
+* [Carousel Slider](https://pub.dev/packages/carousel_slider) 
+* [Google Fonts](https://pub.dev/packages/google_fonts)
+* [Cached Network Image](https://pub.dev/packages/cached_network_image)
+* [Provider](https://pub.dev/packages/provider)
 
 ## Getting Started
 
