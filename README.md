@@ -17,17 +17,27 @@ Project based on redesigning Netflix which I found on Dribble and Behance. App m
 
 ### Home Screen
 
+<img src="https://user-images.githubusercontent.com/71427558/158626863-4b10bcf1-8e58-4c4a-ae55-78f9d8c8129f.PNG" width="300"> <img src="https://user-images.githubusercontent.com/71427558/158628448-7d5e9590-e2f7-4877-8ec5-5761151a9494.PNG" width="300">
+
 ---
 
 ### My List Screen
+<img src="https://user-images.githubusercontent.com/71427558/158628553-64f1b906-7266-4854-9775-011e3e1cb183.PNG" width="300">
+
+---
+
+### Detail Screen
+<img src="https://user-images.githubusercontent.com/71427558/158628963-6e593160-2eb0-49eb-9b08-91774af7abc3.PNG" width="300"> <img src="https://user-images.githubusercontent.com/71427558/158629038-4dce2044-bd4a-4490-b8cd-bae185f9c323.PNG" width="300">
 
 ---
 
 ### Search Screen
+<img src="https://user-images.githubusercontent.com/71427558/158627885-7575dcbc-49e6-4a44-a513-815b432f3750.PNG" width="300">
 
 ---
 
 ### Coming Soon Screen
+<img src="https://user-images.githubusercontent.com/71427558/158627967-1656ca2a-55b8-47cd-afeb-c45203551ddc.PNG" width="300">
 
 ---
 
