@@ -4,13 +4,17 @@ Project based on redesigning Netflix which I found on Dribble and Behance. App m
 
 ## Table of Contents
 1. [Netflix Redesign UI](#netflix-redesign-ui)
-2. [Screenshots](#screenshots)
-3. [Technologies and Plugins](#technologies-and-plugins)
-4. [Netflix Redesign UI](#netflix-redesign-ui)
+2. [Description](#description)
+3. [Screenshots](#screenshots)
+4. [Technologies and Plugins](#technologies-and-plugins)
 5. [Netflix Redesign UI](#netflix-redesign-ui)
+6. [Netflix Redesign UI](#netflix-redesign-ui)
 
 <a name="netflix-redesign-ui"></a>
 ## Netflix Redesign UI
+
+<a name="description"></a>
+## Description
 
 <a name="screenshots"></a>
 ## Screenshots
