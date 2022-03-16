@@ -11,6 +11,8 @@ Project based on redesigning Netflix which I found on Dribble and Behance. App m
 <a name="netflix-redesign-ui"></a>
 ## Netflix Redesign UI
 
+<img src="https://user-images.githubusercontent.com/71427558/158649513-73b03720-ef48-403f-9563-ae08b12f8c60.jpeg">
+
 <a name="description"></a>
 ## Description
 
