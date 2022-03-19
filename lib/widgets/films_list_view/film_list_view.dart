@@ -32,16 +32,31 @@ class _FilmListViewState extends State<FilmListView> {
                         country: movies[index].country,
                         description: movies[index].description,
                         length: movies[index].length,
-                        screenshots: movies[index].screenshots),
+                        screenshots: movies[index].screenshots,),
                   ),
                 ),
                 child: Container(
                   width: 150,
-                  decoration: BoxDecoration(
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image: NetworkImage(movies[index].imgUrl),
-                        fit: BoxFit.cover),
+                    child: Image.network(
+                      movies[index].imgUrl,
+                      fit: BoxFit.cover,
+                      loadingBuilder: (BuildContext context, Widget child,
+                          ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: SizedBox(
+                            height: 50,
+                            width: 50,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 4,
+                              color: Colors.red,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),

@@ -49,11 +49,28 @@ class _SeriesNetflixOriginalsListViewState
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Container(
                           width: 200,
-                          decoration: BoxDecoration(
+                          height: 350,
+                          child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                                image: NetworkImage(series[index].imgUrl),
-                                fit: BoxFit.cover),
+                            child: Image.network(
+                              series[index].imgUrl,
+                              fit: BoxFit.cover,
+                              loadingBuilder: (BuildContext context,
+                                  Widget child,
+                                  ImageChunkEvent? loadingProgress) {
+                                if (loadingProgress == null) return child;
+                                return Center(
+                                  child: SizedBox(
+                                    height: 50,
+                                    width: 50,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 4,
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
                           ),
                         ),
                       ),

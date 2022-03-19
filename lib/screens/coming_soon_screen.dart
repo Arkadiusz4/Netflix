@@ -50,12 +50,26 @@ class _ComingSoonScreenState extends State<ComingSoonScreen> {
                                   height: 200,
                                   width: MediaQuery.of(context).size.width,
                                   child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
                                     child: Image.network(
                                       comingSoon[index].imgUrl,
                                       fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(15),
+                                      loadingBuilder: (BuildContext context,
+                                          Widget child,
+                                          ImageChunkEvent? loadingProgress) {
+                                        if (loadingProgress == null)
+                                          return child;
+                                        return Center(
+                                          child: SizedBox(
+                                            height: 50,
+                                            width: 50,
+                                            child: CircularProgressIndicator(
+                                              strokeWidth: 4,
+                                              color: Colors.red,
+                                            ),
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                 ),

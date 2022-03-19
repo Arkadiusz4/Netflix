@@ -80,7 +80,40 @@ class _SearchScreenState extends State<SearchScreen> {
             padding: const EdgeInsets.only(top: 20, left: 5, right: 5),
             child: _textEditingController!.text.isNotEmpty &&
                     filmsOnSearch.isEmpty
-                ? Text('Ups')
+                ? Center(
+                    child: Padding(
+                      padding:
+                          const EdgeInsets.only(top: 30, left: 30, right: 30),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Uh oh...',
+                            style: GoogleFonts.openSans(
+                                fontSize: 40, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Text(
+                            'We can\'t find movie what are you looking for.',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.openSans(
+                              fontSize: 22,
+                            ),
+                          ),
+                          SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.05),
+                          CircleAvatar(
+                            radius: 180,
+                            backgroundColor: Colors.transparent,
+                            backgroundImage: NetworkImage(
+                                'https://assets.materialup.com/uploads/b17ea0c7-df76-4ce1-bf82-4a2cf6ae866d/preview.jpg'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -127,23 +160,45 @@ class _SearchScreenState extends State<SearchScreen> {
                                                   children: [
                                                     Container(
                                                       width: 120,
-                                                      decoration: BoxDecoration(
+                                                      height: 180,
+                                                      child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(10),
-                                                        image: DecorationImage(
+                                                        child: Image.network(
+                                                          _textEditingController!
+                                                                  .text
+                                                                  .isNotEmpty
+                                                              ? filmsOnSearch[
+                                                                      index]
+                                                                  .imgUrl
+                                                                  .toString()
+                                                              : search[index]
+                                                                  .imgUrl,
                                                           fit: BoxFit.cover,
-                                                          image: NetworkImage(
-                                                            _textEditingController!
-                                                                    .text
-                                                                    .isNotEmpty
-                                                                ? filmsOnSearch[
-                                                                        index]
-                                                                    .imgUrl
-                                                                    .toString()
-                                                                : search[index]
-                                                                    .imgUrl,
-                                                          ),
+                                                          loadingBuilder:
+                                                              (BuildContext
+                                                                      context,
+                                                                  Widget child,
+                                                                  ImageChunkEvent?
+                                                                      loadingProgress) {
+                                                            if (loadingProgress ==
+                                                                null)
+                                                              return child;
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                height: 50,
+                                                                width: 50,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  strokeWidth:
+                                                                      4,
+                                                                  color: Colors
+                                                                      .red,
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
                                                         ),
                                                       ),
                                                     ),

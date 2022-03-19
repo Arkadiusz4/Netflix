@@ -2,8 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/models/series_models.dart';
 import 'package:netflix/screens/detail_screen/series_screen_detail.dart';
-import 'package:netflix/widgets/films_list_view/film_list_view.dart';
-import 'package:netflix/widgets/films_list_view/netflix_orignals_list_view.dart';
+
 import 'package:netflix/widgets/head_menu/head_menu_series.dart';
 import 'package:netflix/widgets/navbar/navbar1.dart';
 import 'package:netflix/widgets/series_list_view/series_list_view.dart';
@@ -52,11 +51,27 @@ class _SeriesScreenState extends State<SeriesScreen> {
                               ),
                             ),
                             child: Container(
-                              decoration: BoxDecoration(
+                              child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: NetworkImage(e.imgUrl),
-                                    fit: BoxFit.fitHeight),
+                                child: Image.network(
+                                  e.imgUrl,
+                                  fit: BoxFit.cover,
+                                  loadingBuilder: (BuildContext context,
+                                      Widget child,
+                                      ImageChunkEvent? loadingProgress) {
+                                    if (loadingProgress == null) return child;
+                                    return Center(
+                                      child: SizedBox(
+                                        height: 50,
+                                        width: 50,
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 4,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ))

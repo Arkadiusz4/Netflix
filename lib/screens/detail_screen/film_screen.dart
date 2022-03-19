@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/provider/movie_provider.dart';
 import 'package:netflix/widgets/movie_screen/content_scroll.dart';
 import 'package:netflix/widgets/movie_screen/circular_clipper.dart';
 
 import 'package:netflix/widgets/movie_screen/info_text.dart';
+import 'package:provider/provider.dart';
 
 class MovieScreen extends StatefulWidget {
   final String photo, title, categories, country, description;
@@ -28,6 +30,8 @@ class MovieScreen extends StatefulWidget {
 class _MovieScreenState extends State<MovieScreen> {
   @override
   Widget build(BuildContext context) {
+    final filmData = Provider.of<MovieProvider>(context);
+    final films = filmData.items;
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
