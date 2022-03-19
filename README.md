@@ -62,4 +62,4 @@ Project based on redesigning Netflix which I found on Dribble and Behance. App m
 
 ## Created by:
 
-[Arkadiusz Mika]("https://github.com/Arkadiusz4")
+[Arkadiusz Mika](https://github.com/Arkadiusz4)
