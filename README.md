@@ -17,7 +17,7 @@ Project based on redesigning Netflix which I found on Dribble and Behance. App m
 ## Description
 * In Home Screen you can see list of films and series which are on platform. 
 * In My List Screen you can see favourite films or series added by yourself. 
-* In Detail Screen you can see informations about film or series. There is duration, publication date and country that created it. Furthermore, you can see a short plot story about movie. Additionally, there are fragments of the films.
+* In Detail Screen you can see informations about film or series. There is duration, publication date and country that created it. Furthermore, you can see a short plot story about movie. Additionally, there are fragments (screenshots) of the films.
 * In Search Screen you can search films or series from database. 
 * In Coming Soon Screen you can see films and series which might will come out. There is short description of storyline and predictable date of coming out. 
 
